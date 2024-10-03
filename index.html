@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Kalkulator BMI</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <h1>Kalkulator BMI</h1>
+        <p class="description">Kalkulator BMI membantu Anda menilai kesehatan berat badan Anda. Isi formulir di bawah untuk mendapatkan informasi tentang BMI dan saran terkait.</p>
+        <div class="content">
+          <div class="input">
+            <label for="age">Usia</label>
+            <input type="text" class="text-input" id="age" autocomplete="off" required/>
+          </div>
+          <div class="gender">
+            <label class="container">
+              <input type="radio" name="radio" id="m" />
+              <p class="text">Laki-laki</p>
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">
+              <input type="radio" name="radio" id="f" />
+              <p class="text">Perempuan</p>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+          <div class="containerHW">
+            <div class="inputH">
+              <label for="height">Tinggi(cm)</label>
+              <input type="number" id="height" required />
+            </div>
+            <div class="inputW">
+              <label for="weight">Berat(kg)</label>
+              <input type="number" id="weight" required />
+            </div>
+          </div>
+          <button class="calculate" id="submit" onclick="calculate();">
+            Hitung BMI
+          </button>
+
+        <h3><img src="ikon/info-circle.svg"> Informasi</h3>
+          <div class="collapse-container">
+            <div class="collapse-header">
+              <p id="judul1">Apa itu BMI?</p>
+              <button class="collapse-icon" id="icon1"  onclick="toggleCollapse(1)">+</button>
+            </div>
+            <div class="collapse-content" id="collapseContent1">
+              <p>Body Mass Index (BMI) atau yang sering dikenal dengan Indeks Massa Tubuh (IMT) adalah nilai ukur untuk mengetahui status gizi seseorang berdasarkan berat dan tinggi badannya. Nilai BMI (IMT) juga dapat menjadi alat skrining awal untuk mengetahui risiko seseorang terhadap suatu penyakit.</p>
+            </div>
+          </div>
+
+          <div class="collapse-container">
+            <div class="collapse-header">
+              <p id="judul2">Cara penilaian BMI</p>
+              <button class="collapse-icon" id="icon2"  onclick="toggleCollapse(2)">+</button>
+            </div>
+            <div class="collapse-content" id="collapseContent2">
+              <p>
+                BMI diukur dengan cara membandingkan berat badan dengan tinggi badan. Cara ini dapat digunakan untuk orang yang berusia di atas 18 tahun.
+                Sementara itu, menghitung indeks massa tubuh dengan cara ini tidak berlaku untuk anak dan remaja (usia di bawah 18 tahun). Status gizi anak diukur dengan indikator berat badan menurut usia, tinggi badan menurut usia, dan berat badan menurut tinggi badan.
+              </p>
+            </div>
+          </div>
+
+          <div class="collapse-container">
+            <div class="collapse-header">
+              <p id="judul3">Mengapa saya harus mengukur BMI?</p>
+              <button class="collapse-icon" id="icon3"  onclick="toggleCollapse(3)">+</button>
+            </div>
+            <div class="collapse-content" id="collapseContent3">
+              <p>
+                Mengetahui BMI membantu Anda untuk menjaga rasio lemak tubuh yang terkait dengan tinggi badan Anda. IMT juga memberi peringatan peluang risiko penyakit yang mungkin mengintai kesehatan Anda.
+                BMI yang sehat umumnya mengarah pada kualitas hidup yang lebih bahagia dan lebih sehat. Sementara IMT yang tinggi berkaitan erat dengan risiko penyakit seperti diabetes tipe 2, penyakit jantung, dan tekanan darah tinggi.
+              </p>
+            </div>
+          </div>
+
+          <div class="collapse-container">
+            <div class="collapse-header">
+              <p id="judul4">Apakah BMI yang tinggi dapat menimbulkan masalah?</p>
+              <button class="collapse-icon" id="icon4"  onclick="toggleCollapse(4)">+</button>
+            </div>
+            <div class="collapse-content" id="collapseContent4">
+              <p>
+                BMI dapat menjadi alat skrining, tetapi bukan tolok ukur diagnosis kegemukan atau kesehatan tubuh seseorang. Untuk menentukan apakah IMT Anda menunjukkan risiko kesehatan tertentu, Anda perlu mendapatkan penilaian ke tenaga kesehatan lebih lanjut.
+               Penilaian ini meliputi pengukuran ketebalan lipatan kulit, evaluasi diet, aktivitas fisik, serta riwayat keluarga.
+              </p>
+            </div>
+          </div>
+    
+        </div>
+        <div class="footer">
+          <span class="footer-text">Oleh Kelompok BMI</span>
+        </div>
+      </div>
+    </div>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <p id="modalText"></p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
