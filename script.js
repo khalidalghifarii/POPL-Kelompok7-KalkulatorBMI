@@ -81,32 +81,44 @@ function countBmi() {
     // Menentukan bb ideal
     // tulis disini
 
-    // Menghitung kalori harian
-    var calories = calculateCalories(Number(p[2]), Number(p[1]), Number(p[0]), p[3]) + additionalCalories;
-    
-    // Membuat parameter URL untuk hasil BMI
-    var urlParams = new URLSearchParams();
-    urlParams.set('bmiResult', bmi.toFixed(2));
-    urlParams.set('bmiClassification', result);
-    urlParams.set('caloriesResult', calories);
-    urlParams.set('adviceResult', advice);
-    // tambahkan bb ideal
+// Menghitung kalori harian
+var calories = calculateCalories(Number(p[2]), Number(p[1]), Number(p[0]), p[3]) + additionalCalories;
 
-    // Redirect ke halaman result dengan parameter URL
-    window.location.href = "result.html?" + urlParams.toString();
+// Menghitung berat badan ideal
+var idealWeight = calculateIdealWeight(Number(p[1]), p[3]);
+
+// Membuat parameter URL untuk hasil BMI
+var urlParams = new URLSearchParams();
+urlParams.set('bmiResult', bmi.toFixed(2));
+urlParams.set('bmiClassification', result);
+urlParams.set('caloriesResult', calories.toFixed(0)); // Membulatkan ke bilangan bulat terdekat
+urlParams.set('adviceResult', advice);
+urlParams.set('idealWeightResult', idealWeight);
+
+// Redirect ke halaman result dengan parameter URL
+window.location.href = "result.html?" + urlParams.toString();
 }
 
 // Fungsi untuk menghitung kalori harian
 function calculateCalories(weight, height, age, gender) {
     var calories;
-
     if (gender === "male") {
         calories = (88.4 + 13.4 * weight) + (4.8 * height) - (5.68 * age);
     } else if (gender === "female") {
         calories = (447.6 + 9.25 * weight) + (3.1 * height) - (4.33 * age);
     }
-
     return calories;
+}
+
+// Fungsi untuk menghitung berat badan ideal
+function calculateIdealWeight(height, gender) {
+    var idealWeight;
+    if (gender === "male") {
+        idealWeight = (height - 100) - ((height - 100) * 0.1);
+    } else if (gender === "female") {
+        idealWeight = (height - 100) - ((height - 100) * 0.15);
+    }
+    return idealWeight.toFixed(1) + " kg";
 }
 
 // Event untuk menutup modal saat tombol close diklik
