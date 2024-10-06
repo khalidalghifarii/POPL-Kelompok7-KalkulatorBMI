@@ -1,8 +1,8 @@
 FROM nginx:alpine
 
-COPY dist/*.html /usr/share/nginx/html/
-COPY dist/*.css /usr/share/nginx/html/
-COPY dist/*.js /usr/share/nginx/html/
+COPY *.html /usr/share/nginx/html/
+COPY *.css /usr/share/nginx/html/
+COPY *.js /usr/share/nginx/html/
 
 EXPOSE 80
 
