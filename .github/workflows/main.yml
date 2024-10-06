@@ -1,10 +1,10 @@
-name: Web Project CI/CD
+name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 jobs:
   build-and-deploy:
@@ -12,24 +12,27 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
-    
+
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '14'
-    
+
     - name: Install dependencies
       run: |
         npm install -g html-minifier-terser
         npm install -g clean-css-cli
         npm install -g uglify-js
-    
-    - name: Build and Minify
+
+    - name: Create and populate dist folder
       run: |
-        mkdir dist
+        mkdir -p dist
         cp *.html dist/
         cp *.css dist/
         cp *.js dist/
+
+    - name: Minify files
+      run: |
         html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true --input-dir ./dist --output-dir ./dist --file-ext html
         for file in dist/*.css; do cleancss -o "${file%.css}.min.css" "$file"; done
         for file in dist/*.js; do uglifyjs "$file" -o "${file%.js}.min.js"; done
