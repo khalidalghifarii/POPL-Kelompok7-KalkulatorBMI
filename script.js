@@ -4,10 +4,9 @@ var height = document.getElementById("height");
 var weight = document.getElementById("weight");
 var male = document.getElementById("m");
 var female = document.getElementById("f");
-// let resultArea = document.querySelector(".comment");
 
-modalContent = document.querySelector(".modal-content");
-modalText = document.querySelector("#modalText");
+var modalContent = document.querySelector(".modal-content");
+var modalText = document.querySelector("#modalText");
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
 
@@ -34,7 +33,6 @@ function calculate() {
 
 // Fungsi untuk menghitung BMI dan menampilkan hasil serta kalori harian
 function countBmi() {
-
     // Mendapatkan nilai dari input
     var p = [age.value, height.value, weight.value];
     if (male.checked) {
@@ -50,53 +48,53 @@ function countBmi() {
     var result = '';
     var advice = '';
     var additionalCalories = 0;
-    // buat variabel bb ideal
 
     // Menentukan kategori BMI dan memberikan saran
     if (bmi < 18.5) {
         result = 'Underweight';
         advice = 'Makanlah lebih banyak untuk mencapai berat badan yang sehat.';
-        additionalCalories = 500; // Menambah 500 kalori untuk Underweight
+        additionalCalories = 500;
     } else if (18.5 <= bmi && bmi <= 24.9) {
         result = 'Healthy Weight';
         advice = 'Pertahankan pola makan yang sehat dan aktifitas fisik.';
     } else if (25 <= bmi && bmi <= 29.9) {
         result = 'Overweight';
         advice = 'Perlu usaha lebih dalam menjaga berat badan.';
-        additionalCalories = -500; // Mengurangi 100 kalori untuk Overweight
+        additionalCalories = -500;
     } else if (30 <= bmi && bmi <= 34.9) {
         result = 'Obese Class I';
         advice = 'Pertimbangkan konsultasi dengan profesional kesehatan.';
-        additionalCalories = -500; // Mengurangi 100 kalori untuk Overweight
+        additionalCalories = -500;
     } else if (35 <= bmi && bmi <= 39.9) {
         result = 'Obese Class II';
         advice = 'Pertimbangkan konsultasi dengan profesional kesehatan.';
-        additionalCalories = -500; // Mengurangi 100 kalori untuk Overweight
+        additionalCalories = -500;
     } else if (40 <= bmi) {
         result = 'Obese Class III';
         advice = 'Pertimbangkan konsultasi dengan profesional kesehatan segera.';
-        additionalCalories = -500; // Mengurangi 100 kalori untuk Overweight
+        additionalCalories = -500;
     }
 
-    // Menentukan bb ideal
-    // tulis disini
+    // Menghitung kalori harian
+    var calories = calculateCalories(Number(p[2]), Number(p[1]), Number(p[0]), p[3]) + additionalCalories;
 
-// Menghitung kalori harian
-var calories = calculateCalories(Number(p[2]), Number(p[1]), Number(p[0]), p[3]) + additionalCalories;
+    // Menghitung berat badan ideal
+    var idealWeight = calculateIdealWeight(Number(p[1]), p[3]);
 
-// Menghitung berat badan ideal
-var idealWeight = calculateIdealWeight(Number(p[1]), p[3]);
+    // Menghitung waktu yang dibutuhkan untuk mencapai berat badan ideal
+    var timeToIdealWeight = calculateTimeToIdealWeight(Number(p[2]), idealWeight, additionalCalories);
 
-// Membuat parameter URL untuk hasil BMI
-var urlParams = new URLSearchParams();
-urlParams.set('bmiResult', bmi.toFixed(2));
-urlParams.set('bmiClassification', result);
-urlParams.set('caloriesResult', calories.toFixed(0)); // Membulatkan ke bilangan bulat terdekat
-urlParams.set('adviceResult', advice);
-urlParams.set('idealWeightResult', idealWeight);
+    // Membuat parameter URL untuk hasil BMI
+    var urlParams = new URLSearchParams();
+    urlParams.set('bmiResult', bmi.toFixed(2));
+    urlParams.set('bmiClassification', result);
+    urlParams.set('caloriesResult', calories.toFixed(0));
+    urlParams.set('adviceResult', advice);
+    urlParams.set('idealWeightResult', idealWeight);
+    urlParams.set('timeToIdealWeight', timeToIdealWeight);
 
-// Redirect ke halaman result dengan parameter URL
-window.location.href = "result.html?" + urlParams.toString();
+    // Redirect ke halaman result dengan parameter URL
+    window.location.href = "result.html?" + urlParams.toString();
 }
 
 // Fungsi untuk menghitung kalori harian
@@ -118,7 +116,65 @@ function calculateIdealWeight(height, gender) {
     } else if (gender === "female") {
         idealWeight = (height - 100) - ((height - 100) * 0.15);
     }
-    return idealWeight.toFixed(1) + " kg";
+    return idealWeight.toFixed(1);
+}
+
+// Fungsi untuk menghitung waktu yang dibutuhkan untuk mencapai berat badan ideal
+function calculateTimeToIdealWeight(currentWeight, idealWeight, calorieAdjustment) {
+    // Jika calorieAdjustment adalah 0, kembalikan 0 hari karena tidak perlu perubahan berat badan
+    if (calorieAdjustment === 0) {
+        return 0; // Tidak ada perubahan yang diperlukan
+    }
+
+    var weightDifference = Math.abs(parseFloat(currentWeight) - parseFloat(idealWeight));
+    var caloriesPerKg = 7700; // Perkiraan kalori yang dibutuhkan untuk menambah/mengurangi 1 kg berat badan
+    var totalCaloriesNeeded = weightDifference * caloriesPerKg;
+    var daysNeeded = Math.ceil(totalCaloriesNeeded / Math.abs(calorieAdjustment));
+    return daysNeeded;
+}
+
+// Fungsi untuk menghasilkan rencana diet dan olahraga
+function generateHealthPlan(bmiClassification, calories) {
+    var dietPlan = '';
+    var exercisePlan = '';
+
+    switch(bmiClassification) {
+        case 'Underweight':
+            dietPlan = 'Tingkatkan asupan kalori dengan makanan bernutrisi tinggi seperti kacang-kacangan, avokad, dan susu.';
+            exercisePlan = 'Fokus pada latihan kekuatan untuk membangun massa otot.';
+            break;
+        case 'Healthy Weight':
+            dietPlan = 'Pertahankan pola makan seimbang dengan banyak sayuran, buah-buahan, dan protein lean.';
+            exercisePlan = 'Lakukan kombinasi latihan kardio dan kekuatan 3-5 kali seminggu.';
+            break;
+        case 'Overweight':
+        case 'Obese Class I':
+        case 'Obese Class II':
+        case 'Obese Class III':
+            dietPlan = 'Kurangi asupan kalori dengan menghindari makanan olahan dan minuman manis. Tingkatkan konsumsi serat.';
+            exercisePlan = 'Mulai dengan aktivitas ringan seperti jalan kaki 30 menit sehari, lalu tingkatkan intensitas secara bertahap.';
+            break;
+    }
+
+    return { diet: dietPlan, exercise: exercisePlan };
+}
+
+// Fungsi untuk menampilkan hasil di halaman result.html
+function displayResults() {
+    var urlParams = new URLSearchParams(window.location.search);
+    
+    document.getElementById('bmiResult').textContent = urlParams.get('bmiResult');
+    document.getElementById('bmiClassification').textContent = urlParams.get('bmiClassification');
+    document.getElementById('caloriesResult').textContent = urlParams.get('caloriesResult') + ' kkal';
+    document.getElementById('adviceResult').textContent = urlParams.get('adviceResult');
+    document.getElementById('idealWeightResult').textContent = urlParams.get('idealWeightResult') + ' kg';
+    
+    var timeToIdealWeight = urlParams.get('timeToIdealWeight');
+    document.getElementById('timeToIdealWeight').textContent = timeToIdealWeight + ' hari';
+
+    var healthPlan = generateHealthPlan(urlParams.get('bmiClassification'), urlParams.get('caloriesResult'));
+    document.getElementById('dietPlan').textContent = healthPlan.diet;
+    document.getElementById('exercisePlan').textContent = healthPlan.exercise;
 }
 
 // Event untuk menutup modal saat tombol close diklik
@@ -163,3 +219,7 @@ function toggleCollapse(collapseNumber) {
     judul.innerHTML = (isCurrentlyOpen) ? judul.innerText : "<strong>" + judul.innerText + "</strong>";
 }
 
+// Panggil fungsi displayResults saat halaman result.html dimuat
+if (window.location.pathname.includes('result.html')) {
+    window.onload = displayResults;
+}

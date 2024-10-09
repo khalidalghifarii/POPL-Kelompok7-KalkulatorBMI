@@ -1,375 +1,447 @@
-/* Tambahkan CSS di sini */
 /* Import Google Font - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 /* Reset CSS */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Collapse Styles */
 
 .collapse-container {
-    max-width: 500px;
-    margin-top: 20px;
+  max-width: 500px;
+  margin-top: 20px;
 }
 
 .collapse-header {
-    display: flex;
-    align-items: center;
-    text-align: start;
+  display: flex;
+  align-items: center;
+  text-align: start;
 }
 
 .collapse-header p {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .collapse-header button {
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 10%;
-    padding: 4px;
-    outline: none;
-    border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 10%;
+  padding: 4px;
+  outline: none;
+  border: none;
 }
 
 .collapse-content {
-    display: none;
-    padding: 10px;
-    border: 1px solid #ddd;
-    margin-top: 10px;
+  display: none;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
 }
 
 .collapse-content p {
-    text-align: start;
-    font-size: 14px;
+  text-align: start;
+  font-size: 14px;
 }
 
 .collapse-content.show {
-    display: block;
+  display: block;
 }
-
 
 /* Body Styles */
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: rgb(97, 138, 254, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: rgb(97, 138, 254, 0.9);
 }
 
 /* Box Styles */
 .box {
-    width: 500px;
-    background: #fafafa;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 2px 2px 20px 5px rgba(0, 0, 0, 0.5);
+  width: 500px;
+  background: #fafafa;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 2px 2px 20px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* Heading Styles */
 h1 {
-    color: rgba(0, 0, 0, 0.7);
-    font-weight: bold;
-    font-size: 36px;
-    padding: 30px 0;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  font-size: 36px;
+  padding: 30px 0;
 }
 
 h3 {
-    color: rgba(0, 0, 0, 0.7);
-    font-weight: bold;
-    font-size: 18px;
-    margin-top: 20px;
-    align-items: center;
-    text-align: start;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 20px;
+  align-items: center;
+  text-align: start;
 }
 
 /* Content Styles */
 .content {
-    padding: 0 30px;
+  padding: 0 30px;
 }
 
 .description {
-    font-size: 18px;
-    color: rgba(0, 0, 0, 0.7);
-    margin: 0px 40px 20px 40px;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 0px 40px 20px 40px;
 }
 
 /* Input Styles */
 .input,
 .inputW,
 .inputH {
-    background: #fff;
-    box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
-    border-radius: 12px;
-    padding: 20px 0;
-    margin-bottom: 20px;
+  background: #fff;
+  box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 20px 0;
+  margin-bottom: 20px;
 }
 
 .input label,
 .inputW label,
 .inputH label {
-    display: block;
-    font-size: 18px;
-    font-weight: 600;
-    color: #000;
-    margin-bottom: 20px;
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 20px;
 }
 
 .input input,
 .inputW input,
 .inputH input {
-    outline: none;
-    border: none;
-    border-bottom: 1px solid #4f7df9;
-    width: 50%;
-    text-align: center;
-    font-size: 28px;
-    font-family: "Nunito", sans-serif;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #4f7df9;
+  width: 50%;
+  text-align: center;
+  font-size: 28px;
+  font-family: "Nunito", sans-serif;
 }
 
 /* Button Styles */
 button.calculate {
-    cursor: pointer;
-    font-family: "Nunito", sans-serif;
-    color: #fff;
-    background: rgb(97, 138, 254, 1);
-    font-size: 16px;
-    border-radius: 7px;
-    padding: 12px 0;
-    width: 100%;
-    outline: none;
-    border: none;
-    transition: all 0.5s;
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  color: #fff;
+  background: rgb(97, 138, 254, 1);
+  font-size: 16px;
+  border-radius: 7px;
+  padding: 12px 0;
+  width: 100%;
+  outline: none;
+  border: none;
+  transition: all 0.5s;
 }
 
 button.calculate:hover {
-    background: #0044ff;
+  background: #0044ff;
 }
 
 /* Result Styles */
 .result {
-    padding: 10px 20px;
+  padding: 10px 20px;
 }
 
 .result p {
-    font-weight: 600;
-    font-size: 22px;
-    color: #000;
-    margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 22px;
+  color: #000;
+  margin-bottom: 15px;
 }
 
 .result #result {
-    font-size: 36px;
-    font-weight: 900;
-    color: #4f7df9;
-    background-color: #eaeaea;
-    display: inline-block;
-    padding: 7px 20px;
-    border-radius: 55px;
-    margin-bottom: 25px;
+  font-size: 36px;
+  font-weight: 900;
+  color: #4f7df9;
+  background-color: #eaeaea;
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 55px;
+  margin-bottom: 25px;
 }
 
 #comment {
-    color: #4f7df9;
-    font-weight: 800;
+  color: #4f7df9;
+  font-weight: 800;
 }
 
 .comment {
-    display: none;
-    border: dashed 1px;
-    border-radius: 7px;
-    padding: 5px;
+  display: none;
+  border: dashed 1px;
+  border-radius: 7px;
+  padding: 5px;
 }
 
 /* Calories Styles */
 .calories {
-    font-size: 16px;
-    color: #000;
+  font-size: 16px;
+  color: #000;
 }
 
 /* Footer Styles */
 .footer {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    padding: 10px 15px;
-    margin-top: 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 10px 15px;
+  margin-top: 20px;
 }
 
 .footer-text {
-    text-decoration: none;
-    color: rgba(40, 40, 40, 0.8);
-    font-family: 'Poppins', sans-serif;
-    font-weight: 200;
-    font-size: 14px;
-    transition: all 0.5s;
+  text-decoration: none;
+  color: rgba(40, 40, 40, 0.8);
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-size: 14px;
+  transition: all 0.5s;
 }
 
 .footer-text:hover {
-    color: rgba(40, 40, 40, 1);
+  color: rgba(40, 40, 40, 1);
 }
 
 /* Gender Styles */
 .gender {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    align-content: center;
-    background: #fff;
-    box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
-    border-radius: 12px;
-    padding: 20px 0;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  background: #fff;
+  box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 20px 0;
+  margin-bottom: 20px;
 }
 
 /* Radio Button Styles */
 .gender .container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-top: 7px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-top: 7px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .gender .container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
 }
 
 .gender .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-    border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
 }
 
 .gender .container:hover input ~ .checkmark {
-    background-color: #ccc;
+  background-color: #ccc;
 }
 
 .gender .container input:checked ~ .checkmark {
-    background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 .gender .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
+  content: "";
+  position: absolute;
+  display: none;
 }
 
 .gender .container input:checked ~ .checkmark:after {
-    display: block;
+  display: block;
 }
 
 .gender .container .checkmark:after {
-    top: 9px;
-    left: 9px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: white;
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
 }
 
 /* Container for Height and Weight Styles */
 .containerHW {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /* Modal Styles */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
-    padding-top: 300px;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 300px;
 }
 
 /* Modal Content Styles */
 .modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 600px;
-    border-radius: 10px;
-    box-shadow: #393c76 -1px 2px 2px 1px;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 600px;
+  border-radius: 10px;
+  box-shadow: #393c76 -1px 2px 2px 1px;
 }
 
 #modalText {
-    padding-top: 8px;
-    padding-right: 5px;
-    font-size: 18px;
-    font-family: 'Poppins', sans-serif;
-    color: rgb(24, 23, 23);
+  padding-top: 8px;
+  padding-right: 5px;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  color: rgb(24, 23, 23);
 }
 
 .modal-wrong {
-    border: 2px solid red;
+  border: 2px solid red;
 }
 
 .modal-correct {
-    border: 2px solid green;
+  border: 2px solid green;
 }
 
 /* Close Button Styles */
 .close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s;
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
 .close:hover {
-    color: #d41111;
+  color: #d41111;
 }
 
 /* Responsive Styles */
 @media (max-width: 700px) {
-    .box {
-        width: 380px;
-    }
+  .box {
+    width: 380px;
+  }
 
-    .input label {
-        font-size: 18px;
-    }
+  .input label {
+    font-size: 18px;
+  }
 
-    .inputH label,
-    .inputW label {
-        font-size: 14px;
-    }
+  .inputH label,
+  .inputW label {
+    font-size: 14px;
+  }
 
-    .input input,
-    .inputH input,
-    .inputW input {
-        font-size: 24px;
-    }
+  .input input,
+  .inputH input,
+  .inputW input {
+    font-size: 24px;
+  }
 
-    .modal-content {
-        width: 380px;
-    }
+  .modal-content {
+    width: 380px;
+  }
+}
+
+/* Styles for result page */
+.result {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.result-item {
+  background: #fff;
+  box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.result-item img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.result-item p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.result-item div {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4f7df9;
+}
+
+.health-plan {
+  background: #fff;
+  box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.health-plan h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.plan-item {
+  margin-bottom: 20px;
+}
+
+.plan-item h3 {
+  font-size: 18px;
+  color: #4f7df9;
+  margin-bottom: 10px;
+}
+
+.plan-item p {
+  font-size: 16px;
+  color: #666;
+}
+
+button.calculate {
+  margin: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .result {
+    grid-template-columns: 1fr;
+  }
 }

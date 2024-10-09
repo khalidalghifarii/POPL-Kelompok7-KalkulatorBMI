@@ -12,55 +12,63 @@
         <div class="box">
             <h1>Hasil Perhitungan</h1>
             <div class="result">
-                <p><img src="ikon/info-circle.svg"> BMI Anda adalah</p>
-                <div id="result">00.00</div>
-
-                <p><img src="ikon/speedometer2.svg"> Kondisi Berat Badan</p>
-                <p id="bmi"></p>
-
-                <p><img src="ikon/hourglass-split.svg"> Kalori Harian Disarankan</p>
-                <p id="calories"></p>
-
-                <p><img src="ikon/heart-pulse.svg"> Saran Kesehatan</p>
-                <p id="advice"></p>
-
-                <p><img src="ikon/hand-thumbs-up.svg"> Kisaran Berat Badan Ideal</p>
-                <!-- sesuaikan id nya utk bb ideal -->
-                <p id=""></p>
+                <div class="result-item">
+                    <img src="ikon/info-circle.svg" alt="BMI Icon">
+                    <p>BMI Anda adalah</p>
+                    <div id="result"><span id="bmiResult">00.00</span></div>
+                </div>
+                <div class="result-item">
+                    <img src="ikon/speedometer2.svg" alt="Weight Condition Icon">
+                    <p>Kondisi Berat Badan</p>
+                    <div id="bmiClassification"></div>
+                </div>
+                <div class="result-item">
+                    <img src="ikon/hourglass-split.svg" alt="Calories Icon">
+                    <p>Kalori Harian Disarankan</p>
+                    <div id="caloriesResult"></div>
+                </div>
+                <div class="result-item">
+                    <img src="ikon/heart-pulse.svg" alt="Health Advice Icon">
+                    <p>Saran Kesehatan</p>
+                    <div id="adviceResult"></div>
+                </div>
+                <div class="result-item">
+                    <img src="ikon/hand-thumbs-up.svg" alt="Ideal Weight Icon">
+                    <p>Berat Badan Ideal</p>
+                    <div id="idealWeightResult"></div>
+                </div>
+                <div class="result-item">
+                    <img src="ikon/hourglass-split.svg" alt="Time to Ideal Weight Icon">
+                    <p>Waktu ke Berat Ideal</p>
+                    <div id="timeToIdealWeight"></div>
+                </div>
             </div>
+
+            <div class="health-plan">
+                <h2>Rencana Kesehatan Anda</h2>
+                <div class="plan-item">
+                    <h3>Rencana Diet</h3>
+                    <p id="dietPlan"></p>
+                </div>
+                <div class="plan-item">
+                    <h3>Rencana Olahraga</h3>
+                    <p id="exercisePlan"></p>
+                </div>
+            </div>
+
+            <button onclick="window.location.href='index.html'" class="calculate">Hitung Ulang</button>
             <div class="footer"><span class="footer-text">Oleh Kelompok 7</span></div>
         </div>
     </div>
 
+    <!-- Modal for alerts -->
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <p id="modalText"></p>
         </div>
     </div>
-    <script src="script.js"></script>
-    <script>
-        var urlParams = new URLSearchParams(window.location.search);
-  
-        // Mengambil data dari parameter URL
-        var bmiResult = urlParams.get("bmiResult");
-        var bmiClassification = urlParams.get("bmiClassification");
-        var calories = urlParams.get("caloriesResult");
-        var advice = urlParams.get("adviceResult");
-        // buat variabel untuk bb ideal
-  
-        if (bmiResult && bmiClassification && calories && advice) { 
-          // tambahkan variabel bb ideal di kondisi
 
-          // Menampilkan hasil dari parameter URL
-          document.querySelector("#result").innerHTML = bmiResult;
-          document.querySelector("#bmi").innerHTML = `<span id="comment">${bmiClassification}</span>`;
-          document.querySelector("#calories").innerHTML = `<span id="comment">${calories} kkal</span>`;
-          document.querySelector("#advice").innerHTML = `<span id="comment">${advice}</span>`;
-          // tambahkan selector untuk bb ideal
-        } else {
-          console.error("Error: Data not found in URL parameters");
-        }
-      </script>
+    <script src="script.js"></script>
 </body>
 </html>
