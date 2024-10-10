@@ -140,7 +140,7 @@ function generateHealthPlan(bmiClassification, calories) {
 
     switch(bmiClassification) {
         case 'Underweight':
-            dietPlan = 'Tingkatkan asupan kalori dengan makanan bernutrisi tinggi seperti kacang-kacangan, avokad, dan susu.';
+            dietPlan = 'Tingkatkan asupan kalori dengan makanan bernutrisi tinggi seperti kacang-kacangan, alpukat, dan susu.';
             exercisePlan = 'Fokus pada latihan kekuatan untuk membangun massa otot.';
             break;
         case 'Healthy Weight':
