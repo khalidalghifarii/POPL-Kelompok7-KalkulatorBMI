@@ -2,7 +2,7 @@
 
 ## Deskripsi Proyek
 
-Kalkulator BMI ini adalah aplikasi web sederhana yang memungkinkan pengguna untuk menghitung Indeks Massa Tubuh (BMI) mereka berdasarkan tinggi dan berat badan. Proyek ini dikembangkan sebagai bagian dari tugas kelompok untuk memahami dan menerapkan konsep pengembangan web dasar.
+Kalkulator BMI ini adalah aplikasi web sederhana yang memungkinkan pengguna untuk menghitung Indeks Massa Tubuh (BMI) mereka berdasarkan tinggi dan berat badan. Proyek ini dikembangkan sebagai bagian dari tugas kelompok untuk memahami dan menerapkan konsep pengembangan web dasar..
 
 ## Fitur
 
