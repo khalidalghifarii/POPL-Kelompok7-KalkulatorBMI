@@ -71,7 +71,7 @@ Kami sangat menghargai kontribusi Anda untuk meningkatkan proyek ini. Jika Anda 
 
 Proyek ini dikembangkan oleh Kelompok 7:
 - Muhammad Khalid Al Ghifari
-- Arif Maulanaa
+- Arif Maulana
 
 ## Lisensi
 
