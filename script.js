@@ -152,7 +152,7 @@ function generateHealthPlan(bmiClassification, calories) {
         case 'Obese Class II':
         case 'Obese Class III':
             dietPlan = 'Kurangi asupan kalori dengan menghindari makanan olahan dan minuman manis. Tingkatkan konsumsi serat.';
-            exercisePlan = 'Mulai dengan aktivitas ringan seperti jalan kaki 30 menit sehari, lalu tingkatkan intensitas secara bertahap.';
+            exercisePlan = 'Mulai dengan aktivitas ringan seperti jalan kaki 30-60 menit sehari, lalu tingkatkan intensitas secara bertahap.';
             break;
     }
 
