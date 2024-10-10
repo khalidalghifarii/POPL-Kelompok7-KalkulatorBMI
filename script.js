@@ -63,7 +63,7 @@ function countBmi() {
         additionalCalories = -500;
     } else if (30 <= bmi && bmi <= 34.9) {
         result = 'Obese Class I';
-        advice = 'Pertimbangkan konsultasi dengan profesional kesehatan.';
+        advice = 'Pertimbangkan untuk berkonsultasi dengan profesional kesehatan.';
         additionalCalories = -500;
     } else if (35 <= bmi && bmi <= 39.9) {
         result = 'Obese Class II';
