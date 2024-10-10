@@ -49,4 +49,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: khalidalghifarii/popl-kelompok7-kalkulatorbmi:latest
+        tags: khalidalghifarii/kalkulatorbmi_kelompok7_popl:latest
