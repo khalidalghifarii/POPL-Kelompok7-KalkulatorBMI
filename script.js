@@ -144,7 +144,7 @@ function generateHealthPlan(bmiClassification, calories) {
             exercisePlan = 'Fokus pada latihan kekuatan untuk membangun massa otot.';
             break;
         case 'Healthy Weight':
-            dietPlan = 'Pertahankan pola makan seimbang dengan banyak sayuran, buah-buahan, dan protein lean.';
+            dietPlan = 'Pertahankan pola makan seimbang dengan banyak sayuran, buah-buahan, dan protein.';
             exercisePlan = 'Lakukan kombinasi latihan kardio dan kekuatan 3-5 kali seminggu.';
             break;
         case 'Overweight':
