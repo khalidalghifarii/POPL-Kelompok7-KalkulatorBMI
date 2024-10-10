@@ -145,7 +145,7 @@ function generateHealthPlan(bmiClassification, calories) {
             break;
         case 'Healthy Weight':
             dietPlan = 'Pertahankan pola makan seimbang dengan banyak sayuran, buah-buahan, dan protein.';
-            exercisePlan = 'Lakukan kombinasi latihan kardio dan kekuatan 3-5 kali seminggu.';
+            exercisePlan = 'Lakukan kombinasi latihan kardio dan kekuatan 2-5 kali seminggu.';
             break;
         case 'Overweight':
         case 'Obese Class I':
