@@ -71,7 +71,7 @@ function countBmi() {
         additionalCalories = -500;
     } else if (40 <= bmi) {
         result = 'Obese Class III';
-        advice = 'Pertimbangkan konsultasi dengan profesional kesehatan segera.';
+        advice = 'Pertimbangkan untuk berkonsultasi dengan profesional kesehatan segera.';
         additionalCalories = -500;
     }
 
