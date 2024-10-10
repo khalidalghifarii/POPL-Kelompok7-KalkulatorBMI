@@ -59,7 +59,7 @@ function countBmi() {
         advice = 'Pertahankan pola makan yang sehat dan aktifitas fisik.';
     } else if (25 <= bmi && bmi <= 29.9) {
         result = 'Overweight';
-        advice = 'Perlu usaha lebih dalam menjaga berat badan.';
+        advice = 'Perlu usaha lebih untuk menjaga berat badan.';
         additionalCalories = -500;
     } else if (30 <= bmi && bmi <= 34.9) {
         result = 'Obese Class I';
