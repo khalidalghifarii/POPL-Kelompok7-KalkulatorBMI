@@ -23,7 +23,7 @@ Kalkulator BMI ini adalah aplikasi web sederhana yang memungkinkan pengguna untu
 
 1. Buka file `index.html` di browser web Anda.
 2. Isi formulir dengan informasi yang diminta:
-   - Usia
+   - Usiaa
    - Jenis Kelamin (Laki-laki/Perempuan)
    - Tinggi (dalam cm)
    - Berat (dalam kg)
